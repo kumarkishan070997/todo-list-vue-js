@@ -27,36 +27,43 @@
             </div>
         </div>
         <div class="row mt-3" style="text-align: center;margin: auto;">
-            <div class="col-3"></div>
-            <div class="col-6">
+            <div class="col-2"></div>
+            <div class="col-8">
                 <form>
-                    <div class="row mt-3" style="margin: auto;">
-                        <div class="col-10">
+                    <div class="row m-auto" style="margin: auto;">
+                        <div class="col-8">
                             <input v-model='data' type="text" id="data" class="form-control"></div>
-                        <div class="col-2">
-                            <button @click.prevent='addTodo' class="btn btn-primary">Add</button></div>
+                        <div class="col-2 p-0">
+                            <button @click.prevent='addTodo' class="btn btn-primary container-fluid">Add</button></div>
+                        <div class="col-2 p-0">
+                            <button @click.prevent='deleteAll' class="btn btn-primary">Delete All</button></div>
                     </div>
                 </form>
             </div>
-            <div class="col-3"></div>
+            <div class="col-2"></div>
         </div>
         <div class="row" style="margin: auto;">
-            <div class="col-3"></div>
-            <div class="col-6" style="padding: 0px;">
+            <div class="col-2"></div>
+            <div class="col-8" style="padding: 0px;">
                 <ul>
                     <li v-for="ele in all">
                         <div class="row mt-2" style="margin: auto;">
-                            <div class="col-8" style="padding-left: 0px!important; padding-right: 0px!important;">
+                            <div class="col-1 bg-info text-white rounded pt-2" style="padding-left: 0px!important; padding-right: 0px!important;text-align: center;">
+                                <label class="">{{hello(ele)}}</label>
+                            </div>
+                            <div class="col-1"></div>
+                            <div class="col-6" style="padding-left: 0px!important; padding-right: 0px!important;">
                                 <h5>{{ele.names}}</h5>
                             </div>
-                            <div class="col-4" style="padding-left: 0px!important; padding-right: 0px!important;"><button @click='deleteData(ele)' class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i>
+                            <div class="col-2"><button @click='deleteData(ele)' class="btn btn-danger container-fluid"><i class="fa fa-trash-o" aria-hidden="true"></i>
                             </button></div>
+                            <div class='col-2'></div>
                         </div>
                     </li>
 
                 </ul>
             </div>
-            <div class="col-3"></div>
+            <div class="col-2"></div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
